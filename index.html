@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumpulan Meme Cinta Interaktif 😭❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe0f0, #d0f4ff);
+      padding: 20px;
+    }
+    h1, h2 { text-align: center; }
+    .section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    button {
+      background: #f06292;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .choice-btn {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+    }
+    .message, .result, .output {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .chat-box, .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .card {
+      background: #fefefe;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      flex: 1 1 40%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meme Cinta Interaktif Buat Cewek 💅❤️</h1>  <!-- Quiz Cinta -->  <div class="section">
+    <h2>1. Quiz Cinta Gagal</h2>
+    <p>Kamu pilih yang mana, girls?</p>
+    <button class="choice-btn" onclick="quizResult(0)">A. Dia selalu bilang kamu cantik</button>
+    <button class="choice-btn" onclick="quizResult(1)">B. Dia suka ngilang tapi bilang rindu</button>
+    <button class="choice-btn" onclick="quizResult(2)">C. Dia suka liatin kamu, tapi deketin temenmu</button>
+    <button class="choice-btn" onclick="quizResult(3)">D. Dia gak follow kamu balik</button>
+    <div class="result" id="quiz-output"></div>
+  </div>  <!-- Chat Cinta -->  <div class="section">
+    <h2>2. Cinta Bertepuk Sebelah Chat</h2>
+    <div class="chat-box">
+      <div><strong>Kamu:</strong> 💌 Aku suka kamu</div>
+      <div id="chat-reply"><strong>Dia:</strong> Dibaca 23:45</div>
+    </div>
+    <button onclick="replyChat()">Tunggu Balasan</button>
+  </div>  <!-- Pilih Jodoh -->  <div class="section">
+    <h2>3. Pilih Tipe Cowok</h2>
+    <div class="card-grid">
+      <div class="card" onclick="jodoh('Si paling aesthetic')">📸 Ganteng tapi slow-respon</div>
+      <div class="card" onclick="jodoh('Si perhatian')">🧃 Inget kamu udah makan, tapi gak pernah ajak jalan</div>
+      <div class="card" onclick="jodoh('Si misterius')">😶 Gak jelas tapi bikin penasaran</div>
+      <div class="card" onclick="jodoh('Si fake hope')">🤡 Sering kode tapi bilang "temenan aja ya"</div>
+    </div>
+    <div class="output" id="jodoh-output"></div>
+  </div>  <!-- CAPTCHA Cinta -->  <div class="section">
+    <h2>4. CAPTCHA Cinta</h2>
+    <label><input type="checkbox" id="captcha"> Saya bukan bucin berlebihan</label><br>
+    <button onclick="verifikasiCaptcha()">Verifikasi</button>
+    <div class="output" id="captcha-output"></div>
+  </div>  <!-- Cinta vs Logika -->  <div class="section">
+    <h2>5. Cinta vs Logika</h2>
+    <button onclick="cintaLogika('Cinta')">💖 Cinta</button>
+    <button onclick="cintaLogika('Logika')">🧠 Logika</button>
+    <div class="output" id="cl-output"></div>
+  </div>  <script>
+    function quizResult(i) {
+      const res = [
+        "Bilang cantik tapi chat 2 hari sekali? Nggak masuk! 🙅‍♀️",
+        "Ngilang dulu baru bilang rindu itu namanya tukang PHP 😤",
+        "Tatapan palsu, niatnya ke temen kamu 😢",
+        "Udah ga follow, ga ngasih kejelasan pula 😩"
+      ];
+      document.getElementById("quiz-output").innerText = res[i];
+    }
+
+    function replyChat() {
+      document.getElementById("chat-reply").innerHTML = "<strong>Dia:</strong> 👍";
+      alert("Cinta bertepuk sebelah Like 😭");
+    }
+
+    function jodoh(pilihan) {
+      document.getElementById("jodoh-output").innerText = `Kamu milih: ${pilihan}.\nTapi dia milih ngechat mantan 😭`;
+    }
+
+    function verifikasiCaptcha() {
+      const check = document.getElementById("captcha").checked;
+      document.getElementById("captcha-output").innerText =
+        check ? "Verifikasi gagal. Kamu terlalu bucin 🥲" : "Centang dulu dong, masa perasaan aja gak yakin? 🙃";
+    }
+
+    function cintaLogika(pilihan) {
+      let text = pilihan === "Cinta"
+        ? "Cinta tanpa logika bikin kamu lupa diri 💔"
+        : "Logika tanpa cinta = kamu fokus healing dan skincare 💅";
+      document.getElementById("cl-output").innerText = text;
+    }
+  </script></body>
+</html>
